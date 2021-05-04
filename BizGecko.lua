@@ -1,11 +1,32 @@
 -- BizGecko: by Jimmie1717
 -- GameShark style cheat codes using the Gecko Codes format for BizHawk.
+--
+-- The Scripts need to be placed in BizHawk's "Lua" directory.
+--	BizHawk/Lua/
+--		BizGecko.lua			Creates the Form window, compiles the code list and calls the codehandler.
+--		BizGecko/
+--			codehandler.lua		Loops through the codes list and executes them.
+--			cheats.lua			Contains the cheats for game(s) based on ROM ID.
+--			docs.lua			Contains the codetype documentation.
+--
+-- Then load the BizGecko.lua in the Lua Console.
+-- If there are codes for the current loaded game in the "cheats.lua" script they will be loaded.
 
 console.clear();
+
+function getROMID()
+	local id="";
+	for i=0,3,1 do
+		id=string.format("%s%s",id,string.char(memory.read_u8(0x3B+i,"ROM")));
+	end
+	id=id..memory.read_u8(0x3F,"ROM");
+	return id;
+end
+
 local gecko=require "BizGecko.codehandler";
 local cheats=require "BizGecko.cheats";
 local docs=require "BizGecko.docs";
-local codes=cheats[gameinfo.getromhash()];
+local codes=cheats[getROMID()];
 local code_list={};
 
 if(codes~=nil)then

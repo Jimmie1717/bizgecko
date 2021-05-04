@@ -14,10 +14,10 @@ Bizhawk/
       docs.lua
 ```
 
-Have the Majora's Mask ROM loaded then run the `BizGecko.lua` script.
+Have a ROM loaded then run the `BizGecko.lua` script.
 A form window will be created.
 
-All of the codes are stored in the `cheats.lua` script by ROM Hash.
+All of the codes are stored in the `cheats.lua` script by ROM ID. (appears at offset 0x3B in the ROM)
 If there are codes for the game when BizGecko is opened they will be loaded.
 
 ### Info

@@ -1,5 +1,5 @@
 return {
-	["D8B1088520F7C5F81433292A9258C1184AFA1457"] = {
+	["NFXE0"] = {
 		["name"] = "Star Fox 64",
 		{
 			["name"] = "Return to Title Screen",
@@ -45,7 +45,7 @@ return {
 			"0416DB98 0000003C"
 		}
 	},
-	["D6133ACE5AFAA0882CF214CF88DABA39E266C078"] = {
+	["NZSE0"] = {
 		["name"] = "The Legend of Zelda: Majora's Mask (USA)",
 		{
 			["name"] = "Infinite Rupees",
